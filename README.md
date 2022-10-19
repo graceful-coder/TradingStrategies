@@ -51,7 +51,7 @@ uched) 0.0.0.0
 ? Insert api-server password <Enter your password here>
 ```
 
-Congratulations! The configuration file is now available at user_data/config.json
+Congratulations! The configuration file is now available at ft_userdata/user_data/config.json
 
 Navigate to the config.json file and underneath `"dry_run": true,` add `"dry_run_wallet": 10000,`
 
@@ -71,7 +71,7 @@ On the trading strategy's web page, click the pink Get button on the right side 
 
 Put the file in the directory user_data/strategies/
 
-Add the Strategy's ***class name*** to the docker-compose.yml file by replacing `--strategy SampleStrategy` at the bottom of the .yml file with `--strategy customOPstrategy`. The SampleStrategy is run by default.
+Add the Strategy's ***class name*** to the docker-compose.yml file in ft_userdata/ by replacing `--strategy SampleStrategy` at the bottom of the .yml file with `--strategy customOPstrategy`. The SampleStrategy is run by default.
 
 # 3\. Go Live!
 
