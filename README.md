@@ -2,7 +2,7 @@
 
 This quickstart supports those in the DeFi community that are interested in algorithmically trading cryptocurrencies.
 
-A custom trading strategy hosted on Ocean Protocol's Goerli Test Net is used with the open-source project, [Freqtrade](https://github.com/freqtrade/freqtrade) to demonstrate enchanced algo trading performance.
+A custom trading strategy hosted on Ocean Protocol's Goerli Test Net is used with the open-source project, [Freqtrade](https://github.com/freqtrade/freqtrade) to demonstrate an algo crypto trading use case.
 
 # 1\. Setup
 
