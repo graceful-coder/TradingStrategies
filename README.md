@@ -69,7 +69,7 @@ We're going to download an Ocean Protocol custom trading strategy located on the
 
 On the trading strategy's web page, click the pink Get button on the right side panel. You will need some Goerli ETH to approve the transaction. [Click here for the Goerli ETH faucet](https://goerlifaucet.com/) if you need more Goerli ETH.
 
-Put the file in the directory user_data/strategies/
+Put the file in the directory ft_userdata/user_data/strategies/
 
 Add the Strategy's ***class name*** to the docker-compose.yml file in ft_userdata/ by replacing `--strategy SampleStrategy` at the bottom of the .yml file with `--strategy customOPstrategy`. The SampleStrategy is run by default.
 
