@@ -2,16 +2,16 @@
 
 This quickstart supports those in the DeFi community that are interested in algorithmically trading cryptocurrencies.
 
-A custom trading strategy hosted on Ocean Protocol's Goerli Test Net is used with the open-source project, [Freqtrade](https://github.com/freqtrade/freqtrade) to demonstrate an algo crypto trading use case.
+A custom trading strategy hosted on Ocean Protocol's Goerli Test Net collaborates with the open-source project, [Freqtrade](https://github.com/freqtrade/freqtrade), to demonstrate an algorithmic crypto trading use case.
 
 # 1\. Setup
 
 ## Prerequisites and Installation
 
-This example uses an algo crypto trading bot from [Freqtrade](https://github.com/freqtrade/freqtrade). Before installing your Freqtrade trading bot, you will need to do the following three items:
-- Install Docker Desktop
-- Install Telegram
-- Create a Telegram bot
+This example uses an algo crypto trading bot from [Freqtrade](https://github.com/freqtrade/freqtrade). Before installing your Freqtrade trading bot, you will need to do the following three actions:
+1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+2. Install [Telegram](https://telegram.org/)
+3. [Create a Telegram bot](https://sendpulse.com/knowledge-base/chatbot/telegram/create-telegram-chatbot)
 
 Then, follow the Terminal commands to install your local Freqtrade bot:
 
@@ -51,7 +51,7 @@ uched) 0.0.0.0
 ? Insert api-server password <Enter your password here>
 ```
 
-The configuration file is now available at user_data/config.json
+Congratulations! The configuration file is now available at user_data/config.json
 
 Navigate to the config.json file and underneath `"dry_run": true,` add `"dry_run_wallet": 10000,`
 
@@ -63,11 +63,11 @@ Navigate to the config.json file and underneath `"dry_run": true,` add `"dry_run
 
 Now for the fun part.
 
-We're going to download an Ocean Protocol custom trading strategy located on the [Ocean Marketplace](https://market.oceanprotocol.com/). Navigate to the [marketplace](https://market.oceanprotocol.com/) and connect your wallet to the Goerli test network.
+We're going to download an Ocean Protocol custom trading strategy located on the [Ocean Market](https://market.oceanprotocol.com/). Navigate to the [market](https://market.oceanprotocol.com/) and connect your wallet to the Goerli test network.
 
 [Next, click here to go to the Custom OP Trading Strategy's page.](https://market.oceanprotocol.com/asset/did:op:736282af36d3088a40ea1a947bb8d9eade32e641f2a995394f5f7817ee873e8a)
 
-On the trading strategy's web page, click the pink Get button on the right side panel. You will need some Goerli ETH to approve the transaction. Click here for the [Goerli ETH faucet](https://goerlifaucet.com/) if you need more Goerli ETH.
+On the trading strategy's web page, click the pink Get button on the right side panel. You will need some Goerli ETH to approve the transaction. [Click here for the Goerli ETH faucet](https://goerlifaucet.com/) if you need more Goerli ETH.
 
 Put the file in the directory user_data/strategies/
 
@@ -97,7 +97,7 @@ This trading strategy uses three technical indicators to buy and sell cryptocurr
 - [Bollinger Bands](https://www.investopedia.com/terms/b/bollingerbands.asp)
 - [Triple Exponential Moving Average (TEMA)](https://www.investopedia.com/ask/answers/041315/why-triple-exponential-moving-average-tema-important-traders-and-analysts.asp)
 
-The candlesticks are also customized in this strategy as the Heiken Ashi style.
+Furthermore, the candlesticks are customized in the [Heiken Ashi](https://www.investopedia.com/terms/h/heikinashi.asp) style.
 
 Let's review the BUY signal code:
 
@@ -114,26 +114,26 @@ Let's review the BUY signal code:
         return dataframe
 		
 
-1. Buy a cryptocurrency pair when the RSI crosses above at least 33: 
+1. Buy a cryptocurrency pair when the RSI crosses **above** at least 33: 
 
 RSI is a momentum indicator showing that the cryptocurrency pair is moving upwards as a bullish sign! When the RSI is lower than 33, then the strategy deems the RSI too risky to buy the currency pair.
 
 AND
 
-2. The triple exponential moving average (TEMA) is lower than the the middle bollinger band:
+2. The triple exponential moving average (TEMA) is **lower** than the the middle bollinger band:
 
 Although the RSI may be up, if the TEMA is less than the middle bollinger band, then the cryptocurrency pair is at a bargain.
 
 AND
 
-3. The triple exponential moving average crosses above that triple exponential moving average value of the PREVIOUS candle:
+3. The triple exponential moving average crosses **above** that triple exponential moving average value of the PREVIOUS candle:
 
 This indicates that the momentum of the cryptocurrency pair is moving upward in a bullish direction.
-(Note: the code `.shift(1)` denotes the previous candle)
+NOTE: the code `.shift(1)` denotes the previous candle
 
 AND
 
-4. The open of the Heiken Ashi candle is less than the close. 
+4. The open of the Heiken Ashi candle is **less** than the close. 
 
 This is equivalent to saying that the candle's closing price is HIGHER than the open -> Bullish indicator!
 
